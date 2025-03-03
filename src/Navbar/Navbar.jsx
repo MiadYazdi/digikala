@@ -1,19 +1,23 @@
 export function Navbar() {
-    return <div className="flex ml-1  justify-between p-4">
-        <button>
+    return <div className="flex justify-between items-center p-4 px-2">
+        {/* دسته بندی کالاها */}
+        <button className="flex items-center gap-2 font-bold text-gray-600">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
                 className="h-7 fill-gray-600">
                 <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z" />
-            </svg>
+            </svg>دسته بندی کالاها
         </button>
+        {/* لوگوی دیجیکالا */}
         <img
             className="inline-block h-10"
             src="https://www.digikala.com/brand/full-horizontal.svg"
-            width="195" height="30"
-            alt="لوگوی دیجیکالا" />
-        <button>
+            width="195"
+            height="30"
+            alt="لوگوی دیجیکالا"/>
+        {/* دکمه جستجو یا هر دکمه دیگر */}
+        <button className="flex items-center px-2">
             <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 512 512"
@@ -21,6 +25,6 @@ export function Navbar() {
                 <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM169.8 165.3c7.9-22.3 29.1-37.3 52.8-37.3l58.3 0c34.9 0 63.1 28.3 63.1 63.1c0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6c-13.3 0-24-10.7-24-24l0-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1c0-8.4-6.8-15.1-15.1-15.1l-58.3 0c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
             </svg>
         </button>
-
-    </div>;
+    </div>
+        ;
 }
