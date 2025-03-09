@@ -8,7 +8,7 @@ import Rollbar from "./Bar/Rollbar";
 
 function App() {
     return (
-        <div className="bg-white w-screen h-screen flex flex-col" dir="rtl">
+        <div className="bg-white w-full h-full flex flex-col" dir="rtl">
             <div className="w-full h-44 bg-white flex flex-col">
                 <Navbar />
                 <UserNav />
@@ -21,7 +21,7 @@ function App() {
             <div className="my-2">
                 <Slider />
             </div>
-            <div className="mt-1 bg-white px-40 flex flex-col w-full shadow-lg rounded-md">
+            <div className="mt-1 bg-white px-4 sm:px-8 md:px-40 flex flex-col w-full shadow-lg rounded-md">
                 <Rollbar />
             </div>
         </div>

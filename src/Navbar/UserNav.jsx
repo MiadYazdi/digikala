@@ -4,9 +4,9 @@ export function UserNav() {
     const [searchTerm, setSearchTerm] = useState("");
 
     return (
-        <div className="flex justify-between items-center pt-3 px-2 py-3 pb-1">
+        <div className="flex justify-between items-center pt-3 px-2 py-3 pb-1 max-w-full flex-wrap">
             {/* Input Search */}
-            <div className="relative w-1/3">
+            <div className="relative w-full sm:w-1/3">
                 {/* SVG for Search Icon */}
                 {searchTerm === "" && (
                     <svg

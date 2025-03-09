@@ -1,4 +1,6 @@
 import React from 'react';
+import { PopupModal } from "./POPup"
+import { useState } from "react";
 
 const categories = [
     {
@@ -48,41 +50,57 @@ const categories = [
     }
 ];
 
-const MoreButton = () => (
-    <div className="shrink-0 w-[80px] flex flex-col items-center user-select-none my-2 lg:my-0 cursor-pointer lg:w-35 w-1/8 px-3 lg:px-4 lg:w-[82px]">
+const MoreButton = ({ onClick }) => (
+    <div
+        onClick={onClick}
+        className="shrink-0 w-[80px] flex flex-col items-center user-select-none my-2 lg:my-0 cursor-pointer lg:w-35 w-1/8 px-3 lg:px-4 lg:w-[82px]"
+    >
         <div className="bg-neutral-100 rounded-full flex justify-center items-center text-neutral-400 w-12 h-12">
-            <span className="text-xl fill pb-3 ">...</span>
+            <span className="text-xl fill pb-3">...</span>
         </div>
         <span className="text-caption-strong text-neutral-700 mt-1">بیشتر</span>
     </div>
 );
 
 const CategoryLinks = () => {
+    const [showModal, setShowModal] = useState(false);
+
+    const handleMoreClick = () => {
+        setShowModal(true);
+    };
+
+    const handleCloseModal = () => {
+        setShowModal(false);
+    };
+
     return (
-        <div className="w-full lg:py-2 bg-neutral-000 lg:items-start flex-wrap lg:justify-around flex overflow-x-auto flex-nowrap overflow-y-hidden hide-scrollbar">
-            {categories.map((category, index) => (
-                <a
-                    key={index}
-                    className="flex flex-col items-center user-select-none my-2 lg:my-0 lg:w-35 w-1/8 shrink-0 lg:!w-[82px] w-[75px]"
-                    href={category.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+        <>
+            <div className="w-full max-w-full lg:py-2 bg-neutral-000 lg:items-start flex flex-wrap lg:justify-around overflow-hidden">
+                {categories.map((category, index) => (
+                    <a
+                        key={index}
+                        className="flex flex-col items-center user-select-none my-2 lg:my-0 w-[75px] shrink-0"
+                        href={category.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                     <div style={{ width: '52px', height: '52px', lineHeight: 0 }}>
-                        <img
-                            className="w-full inline-block"
-                            src={category.src}
-                            width="52"
-                            height="52"
-                            alt={category.title}
-                            style={{ objectFit: 'contain' }}
-                        />
-                    </div>
-                    <span className="text-caption-strong text-neutral-700 mt-1 text-center px-3 lg:px-4">{category.title}</span>
-                </a>
-            ))}
-            <MoreButton />
-        </div>
+                            <img
+                                className="w-full inline-block"
+                                src={category.src}
+                                width="52"
+                                height="52"
+                                alt={category.title}
+                                style={{ objectFit: 'contain' }}
+                            />
+                        </div>
+                        <span className="text-caption-strong text-neutral-700 mt-1 text-center px-3 lg:px-4">{category.title}</span>
+                    </a>
+                ))}
+                <MoreButton onClick={handleMoreClick} />
+            </div>
+            {showModal && <PopupModal categories={categories} onClose={handleCloseModal} />}
+        </>
     );
 };
 
