@@ -5,6 +5,12 @@ import { UserNav } from './Navbar/UserNav';
 import { Slider } from "./Slider/Slider";
 import Slider1 from "./Slider/Slider1";
 import Rollbar from "./Bar/Rollbar";
+import React from "react";
+import {Discount} from "./Discount/Discount";
+import {Advertisement} from "./Advertisement/Advertisement1";
+import {Advertisment2} from "./Advertisement/Advertisment";
+import {Advertisements} from "./Advertisement/Advertisements";
+
 
 function App() {
     return (
@@ -23,6 +29,14 @@ function App() {
             </div>
             <div className="mt-1 bg-white px-4 sm:px-8 md:px-40 flex flex-col w-full shadow-lg rounded-md">
                 <Rollbar />
+            </div>
+            <div className="mt-1 bg-white md:px-40 flex flex-col w-full">
+                <Discount />
+            </div>
+            <div>
+                <Advertisement />
+                <Advertisements />
+                <Advertisment2 />
             </div>
         </div>
     );

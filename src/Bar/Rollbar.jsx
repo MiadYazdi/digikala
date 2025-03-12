@@ -20,12 +20,12 @@ const categories = [
     },
     {
         title: 'پس بده',
-        src: 'imageroll/pas bedeh.jpg',
+        src: '/imageroll/pasbedeh.jpg',
         link: '/landing/fashion-return-1403/'
     },
     {
         title: 'اشتراک پلاس',
-        src: 'imageroll/eshterak plus.png',
+        src: '/imageroll/eshterak plus.png',
         link: '/landing/NowroozPlus/'
     },
     {
