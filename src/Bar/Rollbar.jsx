@@ -75,7 +75,7 @@ const CategoryLinks = () => {
 
     return (
         <>
-            <div className="w-full max-w-full lg:py-2 bg-neutral-000 lg:items-start flex flex-wrap lg:justify-around overflow-hidden">
+            <div className="w-full max-w-full lg:py-2 bg-neutral-000 lg:items-start flex flex-wrap lg:justify-around overflow-hidden container mx-auto px-4 lg:px-40 relative pt-3">
                 {categories.map((category, index) => (
                     <a
                         key={index}

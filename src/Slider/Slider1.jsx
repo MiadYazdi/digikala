@@ -24,7 +24,7 @@ const ImageGrid = () => {
     };
 
     return (
-        <div className="flex items-center justify-center gap-4 p-6">
+        <div className="mt-[100px] flex items-center justify-center gap-4 p-6">
             {startIndex > 0 && (
                 <button onClick={handlePrev} className="w-12 h-12 flex items-center justify-center bg-gray-200 rounded-full shadow-md">
                     <ChevronRight size={24} /> {/* جهت به سمت راست */}

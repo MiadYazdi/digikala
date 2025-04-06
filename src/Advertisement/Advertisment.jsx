@@ -25,7 +25,7 @@ const banners = [
 
 export const Advertisment2 = () => {
     return (
-        <div className="flex gap-4 px-40 py-4">
+        <div className="flex gap-4 py-4 container mx-auto px-4 lg:px-40 relative pt-3">
             {banners.map((banner, index) => (
                 <a
                     key={index}

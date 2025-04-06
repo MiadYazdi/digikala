@@ -1,7 +1,7 @@
 import React from "react";
 export const ProductCard = () => {
     return (
-        <div className="container mx-auto px-4 lg:px-0 bg-red-500 rounded-2xl">
+        <div className="bg-red-500 rounded-2xl container mx-auto px-4 lg:px-40 relative pt-3">
             <div className="flex flex-col lg:block justify-center items-center rounded-lg overflow-hidden">
                 <div className="w-full flex flex-nowrap pb-5 lg:py-5 overflow-hidden relative pr-5 lg:pr-0">
                     <div className="swiper-container flex gap-2">
