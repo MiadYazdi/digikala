@@ -1,34 +1,53 @@
+import React, { useState } from 'react';
 export const Footer = () => {
+    const [isExpanded, setIsExpanded] = useState(false);
     return(
         <div className="w-full bg-white border-t border-neutral-200 pt-8 mt-12 select-none lg:rounded-xl">
             <div className="container mx-auto">
                 <div className="flex justify-between items-center select-none">
                     <img
-                        className="h-10 mr-4"
+                        className="h-10 mr-2"
                         src="https://www.digikala.com/brand/full-horizontal.svg"
                         width="195"
                         height="30"
                         alt="لوگوی دیجیکالا"
                     />
-                    <button className="relative border rounded user-select-none text-button-2 rounded-medium flex justify-center items-center px-3 py-1 cursor-pointer">
+                    <button
+                        onClick={() =>
+                            window.scrollTo({
+                                top: 0,
+                                behavior: 'smooth' // برای اسکرول نرم به بالا
+                            })
+                        }
+                        className="relative border rounded user-select-none text-button-2 rounded-medium flex justify-center items-center px-3 py-1 cursor-pointer"
+                    >
                         <div className="flex items-center justify-center relative grow">
                             <span className="text-neutral-400 ml-2">بازگشت به بالا</span>
                             <div className="flex">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M18.2929 15.2893C18.6834 14.8988 18.6834 14.2656 18.2929 13.8751L13.4007 8.98766C12.6195 8.20726 11.3537 8.20757 10.5729 8.98835L5.68257 13.8787C5.29205 14.2692 5.29205 14.9024 5.68257 15.2929C6.0731 15.6835 6.70626 15.6835 7.09679 15.2929L11.2824 11.1073C11.673 10.7168 12.3061 10.7168 12.6966 11.1073L16.8787 15.2893C17.2692 15.6798 17.9024 15.6798 18.2929 15.2893Z" fill="#808080"/>
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                        d="M18.2929 15.2893C18.6834 14.8988 18.6834 14.2656 18.2929 13.8751L13.4007 8.98766C12.6195 8.20726 11.3537 8.20757 10.5729 8.98835L5.68257 13.8787C5.29205 14.2692 5.29205 14.9024 5.68257 15.2929C6.0731 15.6835 6.70626 15.6835 7.09679 15.2929L11.2824 11.1073C11.673 10.7168 12.3061 10.7168 12.6966 11.1073L16.8787 15.2893C17.2692 15.6798 17.9024 15.6798 18.2929 15.2893Z"
+                                        fill="#808080"
+                                    />
                                 </svg>
                             </div>
                         </div>
                     </button>
                 </div>
-                <div className="mb-8 mt-4 mr-4 md:mt-3 md:mb-0 flex items-center flex-wrap lg:flex-nowrap text-body-2 text-neutral-700">
+                <div className="mb-8 mt-4 mr-2 md:mt-3 md:mb-0 flex items-center flex-wrap lg:flex-nowrap text-body-2 text-neutral-700">
                     <p className="shrink-0 text-sm">تلفن پشتیبانی ۶۱۹۳۰۰۰۰ - ۰۲۱</p>
                     <div className="px-5 text-neutral-400 hidden md:block">|</div>
                     <p className="shrink-0">۰۲۱-۹۱۰۰۰۱۰۰</p>
                     <div className="px-5 text-neutral-400 hidden md:block">|</div>
                     <p className="w-full mt-1 md:mt-0">۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم</p>
                 </div>
-                <div className="my-8 items-center justify-between select-none hidden lg:flex">
+                <div className="my-8 ml-2 items-center justify-between select-none hidden lg:flex">
                     <a className="flex py-3 flex-col items-center justify-between text-center grow">
                         <div className="w-20 h-20 ">
                             <img className="w-full inline-block" src="https://www.digikala.com/statics/img/svg/footer/express-delivery.svg" alt="اﻣﮑﺎن ﺗﺤﻮﯾﻞ اﮐﺴﭙﺮس"/>
@@ -60,7 +79,7 @@ export const Footer = () => {
                         <p className="text-caption text-xs text-neutral-700">ﺿﻤﺎﻧﺖ اﺻﻞ ﺑﻮدن ﮐﺎﻟﺎ</p>
                     </a>
                 </div>
-                <div className="flex flex-wrap w-full justify-between mb-8 mr-4">
+                <div className="flex flex-wrap w-full justify-between mb-8 mr-2">
                     <div className="block lg:grow w-1/4 lg:w-unset">
                         <p className="text-neutral-700 text-h5 mb-2 block font-bold">با دیجی‌کالا</p>
                         <a className="text-body-1 text-neutral-500 mb-2 block" href="#">اتاق خبر دیجی‌کالا</a>
@@ -191,7 +210,7 @@ export const Footer = () => {
                                             </div>
                                         </div>
                                     </label>
-                                    <button className="relative p-2 flex items-center border rounded-medium pointer-events-auto rounded text-white mr-2 bg-red-500">
+                                    <button className="relative p-2 flex items-center border rounded-lg pointer-events-auto text-white mr-2 bg-red-500">
                                         <div className="flex items-center justify-center relative grow">ثبت</div>
                                     </button>
                                 </form>
@@ -252,6 +271,180 @@ export const Footer = () => {
                             </div>
                         </a>
                     </div>
+                </div>
+                <div className="flex items-start justify-between border-t py-8 border-n-200 flex-wrap lg:flex-nowrap">
+                   <div className="grow">
+                       <div className="relative seo lg:ml-10 ml-0 text-neutral-500 text-body-2">
+                           {/* با تغییر وضعیت isExpanded کلاس max-h تغییر می‌کند */}
+                           <div className={`overflow-hidden transition-all duration-500 ${isExpanded ? 'max-h-full' : 'max-h-20'}`}>
+                               <p className="text-xl font-bold">
+                                   دیجی کالا؛ بزرگترین فروشگاه اینترنتی ایران
+                               </p>
+                               <p className="text-sm">
+                                   دیجی کالا سال‌ها است که به انتخاب اول بسیاری از خریداران اینترنتی تبدیل شده است. دیجی کالا به عنوان بزرگ‌ترین و معتبرترین فروشگاه آنلاین ایران، شناخته‌شده‌ترین فروشگاه نیز محسوب می‌شود. این فروشگاه آنلاین نه‌تنها گسترده‌ترین تنوع کالا را در دسته‌بندی‌های مختلف ارائه می‌دهد، بلکه با خدمات بی‌نظیر، سرعت ارسال بالا، ضمانت اصل بودن کالا و پشتیبانی حرفه‌ای، استاندارد جدیدی در خرید اینترنتی ایران تعریف کرده است. این فروشگاه با سال‌ها تجربه و اعتماد مشتریان، کامل‌ترین و بهترین گزینه برای خرید آنلاین در ایران محسوب می‌شود.
+                               </p>
+                               <p className="text-xl font-bold">
+                                   ویژگی های مهم دیجی کالا
+                               </p>
+                               <p>
+                                   یکی از ویژگی‌های مهم در خرید از دیجی کالا، تنوع بی‌نظیر محصولات است. این فروشگاه اینترنتی طیف وسیعی از کالاها را در دسته‌های مختلف از جمله لوازم دیجیتال، لوازم خانگی، مد و پوشاک، لوازم آرایشی و بهداشتی، محصولات سلامت و زیبایی، و بسیاری از محصولات دیگر ارائه می‌دهد. به عنوان مثال، اگر به دنبال خرید یک گوشی موبایل جدید باشید، دیجی کالا مجموعه‌ای از بهترین گوشی‌ها از برندهای معتبر اپل و سامسونگ مانند ایفون 16، گوشی S25، گوشی‌های مختلف از برند شیائومی مانند شیائومی نوت ۱۴ و بسیاری از برندهای دیگر را در اختیار شما قرار می‌دهد. همچنین برای علاقه‌مندان به لوازم دیجیتال، این فروشگاه اینترنتی انواع لپ تاپ، تلویزیون، اسپیکر و هندزفری بلوتوثی با کیفیت بالا را برای خرید آنلاین ارائه می‌دهد. دیجی کالا، مقصدی بی‌پایان برای خرید آسان، سریع و مطمئن است. راهی که هر آنچه نیاز دارید از قیمت لپ تاپ تا یک ایرپاد مطمئن را در اختیار شما قرار می‌دهد.
+                               </p>
+                               <p className="text-xl font-bold">
+                                   ارسال سریع و مطمئن کالا
+                               </p>
+                               <p>
+                                   یکی از مهم‌ترین دغدغه‌های کاربران خرید آنلاین، زمان تحویل کالا است. دیجی کالا برای حل این مشکل، گزینه‌های مختلف ارسال را در نظر گرفته است تا کاربران بتوانند بر اساس نیاز خود، روش ارسال مناسب را انتخاب کنند. به عنوان مثال، ارسال کالا به صورت ارسال امروز، ارسال سریع توسط پیک‌های دیجی کالا، از جمله روش‌های خرید سریع از این فروشگاه اینترنتی است. این امکانات باعث می‌شود که خریداران بتوانند سفارش خود را در کوتاه‌ترین زمان ممکن دریافت کنند. علاوه بر این، در صورتی که کالای خریداری شده از لحاظ کیفیت یا هر دلیل دیگری رضایت مشتری را جلب نکرده باشد، دیجی کالا ضمانت بازگشت کالا را ارائه می‌دهد. این ویژگی موجب اعتماد بیشتر مشتریان به خرید آنلاین از فروشگاه اینترنتی دیجی کالا شده است.
+                               </p>
+                               <p className="text-xl font-bold">
+                                   تخفیف های ویژه و جشنواره ها
+                               </p>
+                               <p>
+                                   دیجی کالا به طور منظم جشنواره‌ها و تخفیف‌های ویژه‌ای را برگزار می‌کند که برای مشتریان فرصت خرید کالاهای باکیفیت با قیمت‌های مناسب به همراه خواهد داشت. این تخفیف‌ها در ایام خاص مانند بلک فرایدی یا همان حراج جمعه سیاه و جشنواره‌های تابستانی توجه بسیاری از خریداران را جلب می‌کند. در این جشنواره‌ها، دیجی کالا تخفیف‌های عالی روی محصولات مختلف از جمله گوشی‌های موبایل، لپ تاپ‌ها، تلویزیون‌ها، و حتی محصولات زیبایی ارائه می‌دهد. می‌توانید گوشی ایفون 16 یا گوشی S25 را با تخفیف‌های ویژه خریداری کنید و از قیمت مناسب بهره‌مند شوید. دیجی کالا فراتر از یک فروشگاه اینترنتی، یک تجربه خرید مطمئن در بین کاربران مختلف بوده است که با ارائه بزرگ‌ترین تنوع کالا، قیمت‌های مختلف و خدماتی بی‌نقص، به مقصد اول خریداران آنلاین در ایران تبدیل شده است.
+                               </p>
+                               <p className="text-xl font-bold">
+                                   انواع محصولات فروشگاه دیجی کالا
+                               </p>
+                               <p>
+                                   دیجی کالا دارای محصولات متنوعی در گروه‌های مختلف است که خرید آنها بسیار راحت و سریع است. به عنوان مثال، اگر به دنبال قاب گوشی یا هندزفری بلوتوثی باشید، می‌توانید مدل‌های مختلف و برندهای گوناگونی را در این فروشگاه پیدا کنید.
+                               </p>
+                               <p className="text-xl font-bold">
+                                   موبایل و کالای دیجیتال
+                               </p>
+                               <p>
+                                   دیجی‌کالا انواع گوشی‌های هوشمند از برندهای معتبر جهانی مانند سامسونگ، اپل، شیائومی و هواوی را با مشخصات و قیمت‌های متنوع عرضه می‌کند. علاوه بر موبایل، دیجی‌کالا مجموعه‌ای از لوازم جانبی مانند هدفون، هندزفری، ساعت‌های هوشمند، تبلت‌ها و لپ تاپ را نیز در اختیار مشتریان قرار می‌دهد. با امکان مقایسه محصولات، مطالعه نظرات کاربران و دسترسی به جدیدترین مدل‌ها، دیجی‌کالا به یکی از مقاصد اصلی خرید آنلاین در حوزه موبایل و کالای دیجیتال تبدیل شده است. از دهه گذشته همواره دیجی کالا به عنوان اولین گزینه برای خرید گوشی های سامسونگ، آیفون های اپل و گوشی شیائومی محسوب می‌شده است و تا امروز هم در عرضه این موبایل های محبوب به بازار، دیجی‌کالا اولین فروشگاه آنلاین بوده است.
+                               </p>
+                               <p className="text-xl font-bold">
+                                   کتاب و لوازم تحریر
+                               </p>
+                               <p>
+                                   کتاب، لوازم تحریر و هنر در دیجی کالا یک مجموعه بی‌نظیر از محصولات فرهنگی و هنری است که به علاقه‌مندان به کتابخوانی، هنر و نوشتن کمک می‌کند تا دنیای خود را گسترش دهند. از کتاب‌های چاپی و کتاب‌های صوتی گرفته تا مجلات خارجی و داخلی و آثار معروف‌ترین نویسندگان مثل سعدی، حافظ، مولانا و فروغ فرخزاد، تمامی نیازهای کتابخوان‌ها را پوشش می‌دهد. همچنین با مجموعه‌ای از لوازم تحریر، ابزار نقاشی و رنگ‌آمیزی، آلبوم‌های عکس و فرش‌های دستبافت، به شما این امکان را می‌دهد تا دنیای هنر و خلاقیت خود را به بهترین نحو پرورش دهید.
+                               </p>
+                               <p className="text-xl font-bold">
+                                   لوازم آرایشی و بهداشتی
+                               </p>
+                               <p>
+                                   در دسته محصولات آرایشی و بهداشتی، دیجی کالا مجموعه‌ای از بهترین و پرطرفدارترین برندهای جهانی را در اختیار کاربران قرار می‌دهد. محصولات متنوعی همچون مرطوب كننده‌ها، كرم پودر، ضدآفتاب، ريمل و رژلب از برندهایی مانند لورال، کلینیک و میبلین در دیجی کالا موجود هستند که برای هر سلیقه و نیاز قابل انتخاب هستند. علاوه بر این، شما می‌توانید محصولات مراقبت از پوست و مو مانند شامپو، کرم‌های ضد چروک و ماسک صورت را در این فروشگاه بیابید و خرید آنلاین خود را به راحتی انجام دهید. دیجی کالا، بزرگ‌ترین و معتبرترین فروشگاه آنلاین لوازم آرایشی ایران، جایی که تنوع، کیفیت و اطمینان در خرید یکجا جمع شده‌اند.
+                               </p>
+                           </div>
+                           <span
+                               onClick={() => setIsExpanded(!isExpanded)}
+                               className="cursor-pointer text-button-2 flex mt-2 items-center user-select-none text-blue-400"
+                           >
+                               {isExpanded ? "مشاهده کمتر>" : "مشاهده بیشتر>"}</span>
+                       </div>
+                   </div>
+                   <div className="w-full flex items-center mt-4 lg:mt-0 justify-center lg:justify-end">
+                       <a className="cursor-pointer p-2 lg:p-4 flex items-center justify-center border rounded-lg mr-2" target="_blank" href="https://sapra.ir/">
+                           <div className="w-16 h-16">
+                               <picture>
+                                   <source type="image/webp" src="https://www.digikala.com/statics/img/png/sapra.webp"/>
+                                   <source type="image/jpeg" src="https://www.digikala.com/statics/img/png/sapra.png/"/>
+                                   <img className="w-14 inline-block"
+                                        src="https://www.digikala.com/statics/img/png/sapra.png"
+                                        alt="سامانه پایش مردمی رسانه‌های صوت و تصویر"/>
+                               </picture>
+                           </div>
+                       </a>
+                       <div className="cursor-pointer p-2 lg:p-4 flex items-center justify-center border rounded-lg mr-2">
+                           <div className="w-16 h-16">
+                               <picture>
+                                   <source type="image/webp" src="https://www.digikala.com/statics/img/png/rezi.webp"/>
+                                   <source type="image/jpeg" src="https://www.digikala.com/statics/img/png/rezi.png"/>
+                                   <img className="w-full inline-block"
+                                        src="https://www.digikala.com/statics/img/png/rezi.png"
+                                        alt="نشان ملی ثبت"/>
+                               </picture>
+                           </div>
+                       </div>
+                       <div className="cursor-pointer p-2 lg:p-4 flex items-center justify-center border rounded-lg mr-2">
+                           <div className="w-16 h-16">
+                               <picture>
+                                   <source type="image/webp" src="https://www.digikala.com/statics/img/png/kasbokar.webp"/>
+                                   <source type="image/jpeg" src="https://www.digikala.com/statics/img/png/kasbokar.png"/>
+                                   <img className="w-14 h-16inline-block"
+                                        src="https://www.digikala.com/statics/img/png/kasbokar.png"
+                                        alt="نشان ملی ثبت"/>
+                               </picture>
+                           </div>
+                       </div>
+                       <a className="cursor-pointer p-2 lg:p-4 flex items-center justify-center border rounded-lg mr-2" target="_blank" href="https://trustseal.enamad.ir/?id=19077&Code=sScdOJOzhFxtcEqkjP7P">
+                           <div className="w-16 h-16">
+                               <img className="w-full inline-block" src="https://trustseal.enamad.ir/logo.aspx?id=19077&Code=sScdOJOzhFxtcEqkjP7P" alt="نماد اعتماد الکترونیک"/>
+                           </div>
+                       </a>
+                   </div>
+                </div>
+                <div className="flex text-sm text-caption text-neutral-500 text-center items-center flex-col justify-between border-t py-8">
+                    برای استفاده از مطالب دیجی‌کالا، داشتن «هدف غیرتجاری» و ذکر «منبع» کافیست. تمام حقوق اين وب‌سايت نیز برای شرکت نوآوران فن آوازه (فروشگاه آنلاین دیجی‌کالا) است.
+                </div>
+            </div>
+            <div className="w-full bg-neutral-100 relative z-[999]">
+                <div className="container mx-auto flex items-center justify-end flex-wrap">
+                    <a className="border-l border-b px-5 py-4 pt-6 items-center grow flex flex-col justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digimag.svg" alt="مجله اینترنتی دیجی‌کالا مگ"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digipay.svg" alt="بهترین راهکارهای پرداخت آنلاین"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digistyle.svg" alt="خرید آنلاین مد و لباس از فروشگاه اینترنتی دیجی‌استایل با همان تجربه از دیجی‌کالا"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digiplus.svg" alt="خدمات ویژه دیجی‌کالا برای کاربران با اشتراک پلاس"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digiclub.svg" alt="دیجی کلاب باشگاه مشتریان دیجیکالا"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/jet.svg" alt="خرید آنی سوپرمارکتی از فروشگاه های نزدیک"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digiMehr.svg" alt="دیجیکالا مهر - زنجیره مهربانی و لبخند"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/diginext.svg" alt="مرکز نوآوری و فناوری گروه دیجی‌کالا"/>
+                        </div>
+                    </a>
+                    <a className="border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digiexpress.svg" alt="سیستم حمل و نقل دیجی‌کالا"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/ganjeh.svg" alt="گنجه"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digify.svg" alt="دیجی‌فای"/>
+                        </div>
+                    </a>
+                    <a className="border-l border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digikala-business.svg" alt="دیجی‌کالا بیزینس"/>
+                        </div>
+                    </a>
+                    <a className="border-b px-5 py-4 pt-6 grow flex flex-col items-center justify-center" target="_blank" href="#">
+                        <div className="h-10">
+                            <img className="w-full inline-block h-6" src="https://www.digikala.com/statics/img/svg/footer/digikala-service.svg" alt="دیجی‌کالا سرویس"/>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>

@@ -1,31 +1,29 @@
-import React from "react";
 export const ProductCard = () => {
     return (
-        <div className="bg-red-500 rounded-2xl container mx-auto px-4 lg:px-40 relative pt-3">
-            <div className="flex flex-col lg:block justify-center items-center rounded-lg overflow-hidden">
-                <div className="w-full flex flex-nowrap pb-5 lg:py-5 overflow-hidden relative pr-5 lg:pr-0">
-                    <div className="swiper-container flex gap-2">
-                        <a
-                            href="/product/dkp-16008379/"
-                            className="bg-white flex flex-col items-stretch p-2 rounded-md w-40">
+        <a href="Products/Cream" className="block">
+            <div className="bg-white rounded-2xl shadow-lg my-4 overflow-hidden max-w-xs mx-auto">
+                <div className="relative">
+                    <div className="w-44 flex flex-col items-center p-4">
+                        <div className="w-full flex justify-center pb-5 overflow-hidden">
                             <img
-                                src="https://dkstatics-public.digikala.com/digikala-products/048821c5ef857f64d1987d09f81f4dfffd73418a_1720445282.jpg"
+                                src="https://dkstatics-public.digikala.com/digikala-products/905a437737265610d3fce1591deefb389a065098_1668586134.jpg?x-oss-process=image/resize,m_lfit,h_800,w_800/quality,q_90"
                                 width="132"
                                 height="132"
-                                alt="هدفون بلوتوثی ایکس او مدل X33"
-                                className="w-32 h-44 rounded-md"/>
-                            <h3 className="text-gray-600 text-sm truncate">هدفون بلوتوثی ایکس او مدل X33</h3>
-                            <div className="flex justify-between items-center">
-                                <span className="bg-red-500 text-white px-1 rounded-md">۴۵٪</span>
-                                <span className="text-gray-700">۶۸۹,۰۰۰ تومان</span>
-                            </div>
-                            <span className="text-gray-400 line-through">۱,۲۵۰,۰۰۰</span>
-                        </a>
+                                alt="کرم مرطوب‌کننده و آبرسان دست و صورت لافارر مدل 04"
+                                className="w-32 h-44 rounded-md object-cover"
+                            />
+                        </div>
+                        <h3 className="text-gray-600 text-sm text-center truncate max-w-full">
+                            کرم مرطوب‌کننده و آبرسان دست و صورت لافارر مدل 04
+                        </h3>
+                        <div className="flex justify-between items-center w-full mt-3">
+                            <span className="bg-red-500 text-white text-xs px-2 py-1 rounded-md">۴۸٪</span>
+                            <span className="text-gray-700 font-semibold">۱۴۵,۹۰۰ تومان</span>
+                        </div>
+                        <span className="text-gray-400 line-through text-xs mt-1">۲۷۸,۷۵۰ تومان</span>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
     );
 };
-
-
