@@ -22,7 +22,7 @@ import {Cream} from "./Products/Cream";
 function HomePage() {
     return (
         <div className="bg-white w-full h-full flex flex-col" dir="rtl">
-            <div className="fixed top-0 left-0 right-0 z-50 w-full h-22 bg-white flex flex-col">
+            <div className="fixed top-0 z-5 w-full h-22 bg-white flex flex-col">
                 <UserNav />
                 <Category />
             </div>

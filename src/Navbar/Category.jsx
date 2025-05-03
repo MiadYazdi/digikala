@@ -27,12 +27,12 @@ export function Category() {
 
     return (
         <div
-            className={`flex w-full max-w-full container-4xl-w mx-auto justify-between md:px-4 transition-all duration-300 border-b border-gray-400 shadow-md ${
+            className={`flex w-full max-w-full mx-auto justify-between md:px-4 transition-all duration-300 border-b border-gray-400 shadow-md ${
                 visible ? "opacity-100" : "opacity-0"
             }`}
         >
             {/* دسته‌بندی‌ها */}
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 px-28">
                 <button className="flex items-center px-2 py-1">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -71,7 +71,7 @@ export function Category() {
                 </div>
             </div>
             {/* موقعیت */}
-            <div className="flex pb-1 items-center text-neutral-700 cursor-pointer mt-2 pt-2 lg:mt-0 lg:pt-0">
+            <div className="flex pb-1 items-center text-neutral-700 cursor-pointer px-32 mt-2 pt-2 lg:mt-0 lg:pt-0">
                 <div className="px-3 py-1 flex items-center justify-between gap-2 rounded-full cursor-pointer bg-orange-200">
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

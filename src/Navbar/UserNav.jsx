@@ -4,7 +4,7 @@ export function UserNav() {
     const [searchTerm, setSearchTerm] = useState("");
 
     return (
-        <div className="flex justify-between items-center px-2 py-3 pb-1 max-w-full flex-wrap">
+        <div className="flex justify-between items-center px-32 py-3 pb-1 max-w-full flex-wrap">
             {/* لوگو و جستجو در کنار هم */}
             <div className="flex items-center gap-3">
                 {/* لوگوی دیجیکالا */}

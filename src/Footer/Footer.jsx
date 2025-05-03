@@ -41,11 +41,11 @@ export const Footer = () => {
                     </button>
                 </div>
                 <div className="mb-8 mt-4 mr-2 md:mt-3 md:mb-0 flex items-center flex-wrap lg:flex-nowrap text-body-2 text-neutral-700">
-                    <p className="shrink-0 text-sm">تلفن پشتیبانی ۶۱۹۳۰۰۰۰ - ۰۲۱</p>
+                    <p className="shrink-0 text-sm">تلفن پشتیبانی 61930000 - 021</p>
                     <div className="px-5 text-neutral-400 hidden md:block">|</div>
-                    <p className="shrink-0">۰۲۱-۹۱۰۰۰۱۰۰</p>
+                    <p className="shrink-0">021-91000100</p>
                     <div className="px-5 text-neutral-400 hidden md:block">|</div>
-                    <p className="w-full mt-1 md:mt-0">۷ روز هفته، ۲۴ ساعته پاسخگوی شما هستیم</p>
+                    <p className="w-full mt-1 md:mt-0">7 روز هفته، 24 ساعته پاسخگوی شما هستیم</p>
                 </div>
                 <div className="my-8 ml-2 items-center justify-between select-none hidden lg:flex">
                     <a className="flex py-3 flex-col items-center justify-between text-center grow">
@@ -64,7 +64,7 @@ export const Footer = () => {
                         <div className="w-20 h-20">
                             <img className="w-full inline-block" src="https://www.digikala.com/statics/img/svg/footer/support.svg" alt="۷ روز ﻫﻔﺘﻪ، ۲۴ ﺳﺎﻋﺘﻪ"/>
                         </div>
-                        <p className="text-caption text-xs text-neutral-700">۷ روز ﻫﻔﺘﻪ، ۲۴ ﺳﺎﻋﺘﻪ</p>
+                        <p className="text-caption text-xs text-neutral-700">7 روز ﻫﻔﺘﻪ، 24 ﺳﺎﻋﺘﻪ</p>
                     </a>
                     <a className="flex py-3 flex-col items-center justify-between text-center grow">
                         <div className="w-20 h-20">
