@@ -5,6 +5,7 @@ import React, {useEffect, useRef, useState} from 'react';
 import {createPopper} from '@popperjs/core';
 import {ChevronLeft, Truck, Clock, Star} from "lucide-react";
 import {Swiper, SwiperSlide} from "swiper/react";
+import '@dotlottie/player-component';
 import "swiper/css";
 
 const Tooltip = ({text, children}) => {
@@ -360,6 +361,11 @@ export const Cream = () => {
         { id: 7, url: "https://digikala.arvanvod.ir/kGp7mgrY8V/92aLPMxd04/thumbnail.png?x-oss-process=image/resize,m_fill,h_115,w_115", type: "video", title: "ویدیو 2", link: "https://www.digikala.com/product/dkp-1234568" },
     ];
 
+    const [isExpanded, setIsExpanded] = useState(false);
+
+    const toggleText = () => {
+        setIsExpanded(!isExpanded);
+    };
 
     return (
         <div className="bg-white w-full h-full flex flex-col" dir="rtl">
@@ -3701,81 +3707,83 @@ export const Cream = () => {
                                                 <div className="mt-2 border-b-2 absolute w-20 border-red-500"></div>
                                             </div>
                                             <div className="flex justify-start item-start mt-3">
-                                                <div className="lg:block ml-12 left-0 sticky styles_pdpCommentQuestionSummary__HRGaN" style={{ top: '171.031px' }}>
-                                                    <div className="flex items-center">
-                                                        <p className="text-2xl sm:text-3xl font-bold ml-1 leading-none">4.3</p>
-                                                        <p> از 5 </p>
-                                                    </div>
-                                                    <div className="flex items-center mt-1">
-                                                        {/* ستاره‌ها */}
-                                                        <div className="inline-flex flex-nowrap relative">
-                                                            {[...Array(5)].map((_, index) => (
-                                                                <div key={index} className="flex">
-                                                                    {/* ستاره خاکستری (خالی) */}
+                                                <div className="hidden xl:block ml-12 left-0 relative" style={{maxWidth: '300px', minWidth:'260px' }}>
+                                                    <div className="sticky" style={{top: "160.031px"}}>
+                                                        <div className="flex items-center">
+                                                            <p className="text-2xl sm:text-3xl font-bold ml-1 leading-none">4.3</p>
+                                                            <p> از 5 </p>
+                                                        </div>
+                                                        <div className="flex items-center mt-1">
+                                                            {/* ستاره‌ها */}
+                                                            <div className="inline-flex flex-nowrap relative">
+                                                                {[...Array(5)].map((_, index) => (
+                                                                    <div key={index} className="flex">
+                                                                        {/* ستاره خاکستری (خالی) */}
+                                                                        <svg
+                                                                            viewBox="0 0 24 24"
+                                                                            fill="#E5E7EB"
+                                                                            width="20"
+                                                                            height="20"
+                                                                        >
+                                                                            <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.45 13.97 5.82 21z" />
+                                                                        </svg>
+                                                                    </div>
+                                                                ))}
+
+                                                                {/* روکش ستاره‌های طلایی (امتیاز واقعی) */}
+                                                                <div className="absolute right-0 top-0 overflow-hidden h-5" style={{ width: '86%' }}>
+                                                                    <div className="absolute right-0 top-0 flex flex-nowrap">
+                                                                        {[...Array(5)].map((_, index) => (
+                                                                            <div key={index} className="flex">
+                                                                                <svg
+                                                                                    viewBox="0 0 24 24"
+                                                                                    fill="#FBBF24"
+                                                                                    width="20"
+                                                                                    height="20"
+                                                                                >
+                                                                                    <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.45 13.97 5.82 21z" />
+                                                                                </svg>
+                                                                            </div>
+                                                                        ))}
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            {/* نوشته مجموع امتیاز */}
+                                                            <p className="text-xs text-neutral-400 mr-2">از مجموع 6,824 امتیاز</p>
+                                                        </div>
+                                                        <p className="text-neutral-700 mt-4 mb-3 text-caption">شما هم درباره این کالا دیدگاه ثبت کنید</p>
+                                                        <button className="relative flex items-center border border-red-500 p-2 user-select-none text-button-2 rounded-md w-full mt-2 text-button-2" data-cro-id="pdp-add-comment">
+                                                            <div className="flex items-center text-red-500 justify-center relative grow">ثبت دیدگاه</div>
+                                                        </button>
+                                                        <div className="rounded mt-3">
+                                                            <div className="flex">
+                                                                <div className="flex mt-1">
                                                                     <svg
                                                                         viewBox="0 0 24 24"
-                                                                        fill="#E5E7EB"
-                                                                        width="20"
-                                                                        height="20"
+                                                                        xmlns="http://www.w3.org/2000/svg"
+                                                                        fill="currentColor"
+                                                                        className="w-4 h-4 text-gray-500"
                                                                     >
-                                                                        <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.45 13.97 5.82 21z" />
+                                                                        <path
+                                                                            d="M12 7h1v7h-1zm1.5 9.5a1 1 0 1 0-1 1 1.002 1.002 0 0 0 1-1zm9.3-4A10.3 10.3 0 1 1 12.5 2.2a10.297 10.297 0 0 1 10.3 10.3zm-1 0a9.3 9.3 0 1 0-9.3 9.3 9.31 9.31 0 0 0 9.3-9.3z"/>
+                                                                        <path fill="none" d="M0 0h24v24H0z"/>
                                                                     </svg>
                                                                 </div>
-                                                            ))}
-
-                                                            {/* روکش ستاره‌های طلایی (امتیاز واقعی) */}
-                                                            <div className="absolute right-0 top-0 overflow-hidden h-5" style={{ width: '86%' }}>
-                                                                <div className="absolute right-0 top-0 flex flex-nowrap">
-                                                                    {[...Array(5)].map((_, index) => (
-                                                                        <div key={index} className="flex">
-                                                                            <svg
-                                                                                viewBox="0 0 24 24"
-                                                                                fill="#FBBF24"
-                                                                                width="20"
-                                                                                height="20"
-                                                                            >
-                                                                                <path d="M12 17.27L18.18 21 16.54 13.97 22 9.24 14.81 8.63 12 2 9.19 8.63 2 9.24 7.45 13.97 5.82 21z" />
-                                                                            </svg>
-                                                                        </div>
-                                                                    ))}
-                                                                </div>
+                                                                <span className="mr-2 text-body-2 text-neutral-500"></span>
+                                                                <p className="text-neutral-600 text-sm text-body-2">با ثبت دیدگاه بر روی کالاهای خریداری شده 5 امتیاز در دیجیکلاب دریافت کنید</p>
                                                             </div>
-                                                        </div>
-
-                                                        {/* نوشته مجموع امتیاز */}
-                                                        <p className="text-sm text-neutral-400 mr-2">از مجموع 6,824 امتیاز</p>
-                                                    </div>
-                                                    <p className="text-neutral-700 mt-4 mb-3 text-caption">شما هم درباره این کالا دیدگاه ثبت کنید</p>
-                                                    <button className="relative flex items-center border border-red-500 p-2 user-select-none text-button-2 rounded-md w-full mt-2 text-button-2" data-cro-id="pdp-add-comment">
-                                                        <div className="flex items-center text-red-500 justify-center relative grow">ثبت دیدگاه</div>
-                                                    </button>
-                                                    <div className="rounded mt-3">
-                                                        <div className="flex">
-                                                            <div className="flex mt-1">
-                                                                <svg
-                                                                    viewBox="0 0 24 24"
-                                                                    xmlns="http://www.w3.org/2000/svg"
-                                                                    fill="currentColor"
-                                                                    className="w-4 h-4 text-gray-500"
-                                                                >
-                                                                    <path
-                                                                        d="M12 7h1v7h-1zm1.5 9.5a1 1 0 1 0-1 1 1.002 1.002 0 0 0 1-1zm9.3-4A10.3 10.3 0 1 1 12.5 2.2a10.297 10.297 0 0 1 10.3 10.3zm-1 0a9.3 9.3 0 1 0-9.3 9.3 9.31 9.31 0 0 0 9.3-9.3z"/>
-                                                                    <path fill="none" d="M0 0h24v24H0z"/>
-                                                                </svg>
-                                                            </div>
-                                                            <span className="mr-2 text-body-2 text-neutral-500"></span>
-                                                            <p className="text-neutral-600 text-sm text-body-2">با ثبت دیدگاه بر روی کالاهای خریداری شده 5 امتیاز در دیجیکلاب دریافت کنید</p>
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div className="grow min-w-0">
                                                     <div>
-                                                        <div className="mt-5 border-b-2">
+                                                        <div className="mt-5 border-b border-gray-200">
                                                             <div className="mt-8">
                                                                 {/* نمایش اولیه به‌صورت افقی و کوچک */}
                                                                 <div className="flex overflow-x-auto gap-2 mb-6">
                                                                     {(areMediaVisible ? media : media.slice(0, 5)).map((item) => (
-                                                                        <div key={item.id} className="min-w-[56px] min-h-[56px] w-14 h-14 flex-shrink-0">
+                                                                        <div key={item.id} className="min-w-[56px] mx-4 min-h-[56px] w-14 h-14 flex-shrink-0">
                                                                             {item.type === "video" ? (
                                                                                 <iframe
                                                                                     className="w-14 h-14 rounded object-cover"
@@ -3873,6 +3881,170 @@ export const Cream = () => {
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div className="flex flex-col gap-3">
+                                                        {/* Header with AI icon and title */}
+                                                        <div className="py-2 mt-4 flex items-center">
+                                                            <div className="w-[40px] h-[40px]">
+                                                                <dotlottie-player
+                                                                    autoplay
+                                                                    loop
+                                                                    mode="normal"
+                                                                    src="/image/ai.lottie"
+                                                                    background="transparent"
+                                                                />
+                                                            </div>
+                                                            <div className="mr-2">
+                                                                <div className="text-lg font-bold">خلاصه دیدگاه‌های خریدارها</div>
+                                                                <div className="text-xs text-neutral-400 font-semibold">تولید شده با هوش مصنوعی</div>
+                                                            </div>
+                                                        </div>
+
+                                                        {/* Main comment box */}
+                                                        <div className="relative">
+                                                            {/* Top quote icon */}
+                                                            <div className="absolute -top-4 right-6 w-[22px] h-[16px] leading-none">
+                                                                <img
+                                                                    className="w-full inline-block object-contain"
+                                                                    src="https://www.digikala.com/statics/img/svg/tail-comment-summary-desktop.svg"
+                                                                    width="22"
+                                                                    height="16"
+                                                                    alt=""
+                                                                />
+                                                            </div>
+
+                                                            <div className="p-4 rounded-lg bg-purple-50">
+                                                                <div>
+                                                                    {/* محتوای توضیحات محصول */}
+                                                                    <div className={`text-sm whitespace-pre-wrap ${isExpanded ? '' : 'line-clamp-2'}`}>
+                                                                        محصول "کرم مرطوب کننده و آبرسان دست و صورت لافارر مدل 04 مناسب پوست‌های حساس" به خاطر خاصیت ضد التهاب و عدم ایجاد احساس سوزش مورد تحسین کاربران قرار گرفته است. بسیاری از کاربران به راحتی از این کرم استفاده می‌کنند و رضایت از آبرسانی و مرطوب‌کنندگی آن دارند. به‌ویژه افرادی که پوست خشکی دارند، از حالت رطوبت و لطافت پوست شان پس از استفاده لذت می‌برند.
+
+                                                                        با این حال، برخی کاربران به تجربه عدم آبرسانی کافی و بوی برخی محصولات اشاره کرده‌اند. همچنین، افرادی که پوست چرب دارند، ممکن است این کرم را مناسب خود ندانند و برای آن‌ها چربی بیشتر شود.
+
+                                                                        به ‌طور کلی، این کرم به عنوان یک محصول موثر برای پوست‌های حساس و خشک معرفی می‌شود و اکثر کاربران از آن راضی هستند.
+                                                                    </div>
+
+                                                                    {/* دکمه مشاهده بیشتر/کمتر */}
+                                                                    <span
+                                                                        onClick={toggleText}
+                                                                        className="inline-flex items-center cursor-pointer text-sm mb-4 underline underline-offset-8 text-black"
+                                                                    >
+                                                                        <span>{isExpanded ? 'مشاهده کمتر' : 'مشاهده بیشتر'}</span>
+                                                                    </span>
+                                                                </div>
+
+                                                                {/* Tags */}
+                                                                <div className="flex mb-2 flex-wrap gap-x-1 gap-y-2">
+                                                                    {[
+                                                                        { text: 'ضد التهاب و تسکین‌دهنده', positive: true },
+                                                                        { text: 'سبک و سریع جذب', positive: true },
+                                                                        { text: 'بدون عطر و مناسب پوست حساس', positive: true },
+                                                                        { text: 'عدم آبرسانی کافی برای برخی', positive: false },
+                                                                        { text: 'بوی خنثی و ماندگی', positive: false },
+                                                                        { text: 'ممکن است برای پوست چرب مناسب نباشد', positive: false },
+                                                                    ].map((tag, idx) => (
+                                                                        <div
+                                                                            key={idx}
+                                                                            className="flex items-center border px-2 py-1 rounded-full border-gray-200 w-fit text-xs"
+                                                                            style={{
+                                                                                borderColor: tag.positive ? 'var(--color-icon-success)' : 'var(--color-icon-error)',
+                                                                            }}
+                                                                        >
+                                                                            <div
+                                                                                className="mr-1"
+                                                                                style={{
+                                                                                    fontSize: '16px',
+                                                                                    color: tag.positive ? 'var(--color-icon-success)' : 'var(--color-icon-error)',
+                                                                                }}
+                                                                            >
+                                                                                {tag.positive ? (
+                                                                                    <span className="icon-success">
+                                                                                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                                                                                            <path
+                                                                                                fillRule="evenodd"
+                                                                                                clipRule="evenodd"
+                                                                                                d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16.0303 8.96967C16.3232 9.26256 16.3232 9.73744 16.0303 10.0303L11.0303 15.0303C10.7374 15.3232 10.2626 15.3232 9.96967 15.0303L7.96967 13.0303C7.67678 12.7374 7.67678 12.2626 7.96967 11.9697C8.26256 11.6768 8.73744 11.6768 9.03033 11.9697L10.5 13.4393L12.7348 11.2045L14.9697 8.96967C15.2626 8.67678 15.7374 8.67678 16.0303 8.96967Z"
+                                                                                                fill="#008000"
+                                                                                            />
+                                                                                        </svg>
+                                                                                    </span>
+                                                                                ) : (
+                                                                                    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="18" height="18">
+                                                                                        <path
+                                                                                            fillRule="evenodd"
+                                                                                            clipRule="evenodd"
+                                                                                            d="M24 44C35.0457 44 44 35.0457 44 24C44 12.9543 35.0457 4 24 4C12.9543 4 4 12.9543 4 24C4 35.0457 12.9543 44 24 44ZM14 23C13.4477 23 13 23.4477 13 24C13 24.5523 13.4477 25 14 25H34C34.5523 25 35 24.5523 35 24C35 23.4477 34.5523 23 34 23H14Z"
+                                                                                            fill="#FF0000"
+                                                                                        />
+                                                                                    </svg>
+                                                                                )}
+
+                                                                            </div>
+                                                                            <span className="mr-1 whitespace-nowrap">{tag.text}</span>
+                                                                        </div>
+                                                                    ))}
+                                                                </div>
+
+                                                                <div className="text-xs text-neutral-500">این خلاصه ممکن است دقیق نباشد</div>
+                                                            </div>
+                                                        </div>
+
+                                                        {/* Feedback section */}
+                                                        <div className="mt-2 pb-5 flex items-center">
+                                                            <div className="text-sm">آیا این خلاصه برایتان مفید بود؟</div>
+                                                            <div className="flex items-center mr-auto lg:mr-4">
+                                                                <div className="rounded-full h-9 w-9 flex items-center justify-center bg-neutral-100 cursor-pointer">
+                                                                    <span style={{ color: 'var(--color-icon-high-emphasis)', fontSize: '20px' }}><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                                                                        <path d="M8 10V20M8 10L4 9.99998V20L8 20M8 10L13.1956 3.93847C13.6886 3.3633 14.4642 3.11604 15.1992 3.29977L15.2467 3.31166C16.5885 3.64711 17.1929 5.21057 16.4258 6.36135L14 9.99998H18.5604C19.8225 9.99998 20.7691 11.1546 20.5216 12.3922L19.3216 18.3922C19.1346 19.3271 18.3138 20 17.3604 20L8 20" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                                                                    </svg>
+                                                                    </span>
+                                                                </div>
+                                                                <div className="mr-5 rounded-full h-9 w-9 flex items-center justify-center bg-neutral-100 cursor-pointer">
+                                                                    <span style={{ color: 'var(--color-icon-high-emphasis)', fontSize: '20px' }}><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                                                                        <path d="M8 14V4M8 14L4 14V4.00002L8 4M8 14L13.1956 20.0615C13.6886 20.6367 14.4642 20.884 15.1992 20.7002L15.2467 20.6883C16.5885 20.3529 17.1929 18.7894 16.4258 17.6387L14 14H18.5604C19.8225 14 20.7691 12.8454 20.5216 11.6078L19.3216 5.60779C19.1346 4.67294 18.3138 4.00002 17.3604 4.00002L8 4" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                                                                    </svg>
+                                                                    </span>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="border-b border-gray-200 mb-6 pb-2"></div>
+                                                    </div>
+                                                    <div className="flex flex-row items-center gap-x-4">
+                                                        {/* مرتب‌سازی */}
+                                                        <div className="break-words py-3">
+                                                            <div className="flex items-center grow">
+                                                                <div className="flex shrink-0 ml-2">
+                                                                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)" stroke="#000000" width="24" height="24">
+                                                                        <g id="SVGRepo_iconCarrier">
+                                                                            <path d="M4 8H13" stroke="#000000" strokeWidth="1.5" strokeLinecap="round"></path>
+                                                                            <path d="M6 13H13" stroke="#000000" strokeWidth="1.5" strokeLinecap="round"></path>
+                                                                            <path d="M8 18H13" stroke="#000000" strokeWidth="1.5" strokeLinecap="round"></path>
+                                                                            <path d="M17 20V4L20 8" stroke="#000000" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
+                                                                        </g>
+                                                                    </svg>
+
+                                                                </div>
+                                                                <p className="grow cursor-pointer whitespace-nowrap text-neutral-700 font-semibold text-sm">
+                                                                    <span className="relative">مرتب سازی:</span>
+                                                                </p>
+                                                            </div>
+                                                        </div>
+
+                                                        {/* گزینه‌های مرتب‌سازی */}
+                                                        <div className="flex gap-x-2">
+                                                            <span className="cursor-pointer whitespace-nowrap text-sm text-neutral-500">جدیدترین</span>
+                                                            <span className="cursor-pointer whitespace-nowrap text-sm text-neutral-500">دیدگاه خریداران</span>
+                                                            <span className="cursor-pointer whitespace-nowrap text-sm font-semibold text-primary-700">مفیدترین</span>
+                                                        </div>
+
+                                                        {/* تعداد دیدگاه‌ها */}
+                                                        <div className="mr-auto block">
+                                                            <span className="text-neutral-500 whitespace-nowrap text-sm truncate xl:flex items-center gap-2">
+                                                                3,540 دیدگاه
+                                                            </span>
+                                                        </div>
+                                                    </div>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -3881,7 +4053,7 @@ export const Cream = () => {
                             </div>
                         </div>
                         <div className="hidden xl:block mr-10 relative min-w-[320px]">
-                            <div className="sticky z-10" style={{top: "195.031px"}}>
+                            <div className="sticky" style={{top: "160.031px"}}>
                                 <div className="bg-neutral-100 mb-2 mt-5 p-4 rounded-md border">
                                     <div className="flex items-center text-h5 py-2">
                                         <div className="text-[#e6123d]">
